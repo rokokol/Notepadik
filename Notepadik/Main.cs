@@ -109,15 +109,12 @@ namespace Notepadik
             if (textBox.SelectionFont.Size > 2)
                 textBox.SelectionFont = new Font(textBox.SelectedText, textBox.SelectionFont.Size - 2);
         }
-
-
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        
+        private void changeColorTool_Click_1(object sender, EventArgs e)
         {
-
-        }
-        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
+            if (colorDialog.ShowDialog() == DialogResult.Cancel)
+                return;
+            textBox.SelectionColor = colorDialog.Color;
         }
     }
 }
