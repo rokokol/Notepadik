@@ -112,6 +112,7 @@ namespace Notepadik
         
         private void changeColorTool_Click_1(object sender, EventArgs e)
         {
+            colorDialog.FullOpen = true;
             if (colorDialog.ShowDialog() == DialogResult.Cancel)
                 return;
             textBox.SelectionColor = colorDialog.Color;
