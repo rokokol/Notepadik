@@ -126,5 +126,21 @@ namespace Notepadik
             textBox.SelectionFont = fontDialog.Font;
             textBox.SelectionColor = fontDialog.Color;
         }
+
+        private void copyTool_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBox.SelectedText);
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBox.SelectedText = Clipboard.GetText();
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBox.SelectedText);
+            textBox.SelectedText = "";
+        }
     }
 }

@@ -50,6 +50,10 @@ namespace Notepadik
             this.downTool = new System.Windows.Forms.ToolStripMenuItem();
             this.openFontDialogTool = new System.Windows.Forms.ToolStripMenuItem();
             this.changeColorTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.bufferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printTool = new System.Windows.Forms.ToolStripMenuItem();
             this.infoTool = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
@@ -69,7 +73,7 @@ namespace Notepadik
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem, this.editToolStripMenuItem, this.printTool, this.infoTool });
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem, this.editToolStripMenuItem, this.bufferToolStripMenuItem, this.printTool, this.infoTool });
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(526, 24);
@@ -206,6 +210,41 @@ namespace Notepadik
             this.changeColorTool.ToolTipText = "Change selected text color";
             this.changeColorTool.Click += new System.EventHandler(this.changeColorTool_Click_1);
             // 
+            // bufferToolStripMenuItem
+            // 
+            this.bufferToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.copyTool, this.pasteToolStripMenuItem, this.cutToolStripMenuItem });
+            this.bufferToolStripMenuItem.Name = "bufferToolStripMenuItem";
+            this.bufferToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.bufferToolStripMenuItem.Text = "Buffer";
+            this.bufferToolStripMenuItem.ToolTipText = "For buffer options";
+            // 
+            // copyTool
+            // 
+            this.copyTool.Name = "copyTool";
+            this.copyTool.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyTool.Size = new System.Drawing.Size(152, 22);
+            this.copyTool.Text = "Copy";
+            this.copyTool.ToolTipText = "Copy selection";
+            this.copyTool.Click += new System.EventHandler(this.copyTool_Click);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.ToolTipText = "Paste text into selection";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            // 
+            // cutToolStripMenuItem
+            // 
+            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cutToolStripMenuItem.Text = "Cut";
+            this.cutToolStripMenuItem.ToolTipText = "Cut selecion to the clipboard";
+            this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
+            // 
             // printTool
             // 
             this.printTool.Name = "printTool";
@@ -243,6 +282,11 @@ namespace Notepadik
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem bufferToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyTool;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
 
         private System.Windows.Forms.FontDialog fontDialog;
         private System.Windows.Forms.ToolStripMenuItem openFontDialogTool;
