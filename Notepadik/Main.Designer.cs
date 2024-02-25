@@ -34,10 +34,12 @@ namespace Notepadik
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.textBox = new System.Windows.Forms.RichTextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveTool = new System.Windows.Forms.ToolStripMenuItem();
             this.openTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveWithFormatTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.openWithFormatTool = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boldTool = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +60,9 @@ namespace Notepadik
             this.infoTool = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
-            this.menuStrip1.SuspendLayout();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox
@@ -71,18 +75,18 @@ namespace Notepadik
             this.textBox.Text = "";
             this.textBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem, this.editToolStripMenuItem, this.bufferToolStripMenuItem, this.printTool, this.infoTool });
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(526, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip";
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem, this.editToolStripMenuItem, this.bufferToolStripMenuItem, this.printTool, this.infoTool });
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(526, 24);
+            this.menuStrip.TabIndex = 1;
+            this.menuStrip.Text = "menuStrip";
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.saveTool, this.openTool });
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.saveTool, this.openTool, this.saveWithFormatTool, this.openWithFormatTool });
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -92,7 +96,7 @@ namespace Notepadik
             this.saveTool.Name = "saveTool";
             this.saveTool.ShortcutKeyDisplayString = "Ctrl + S";
             this.saveTool.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveTool.Size = new System.Drawing.Size(166, 22);
+            this.saveTool.Size = new System.Drawing.Size(243, 22);
             this.saveTool.Text = "Save as";
             this.saveTool.ToolTipText = "Save file";
             this.saveTool.Click += new System.EventHandler(this.saveTool_Click);
@@ -102,10 +106,28 @@ namespace Notepadik
             this.openTool.Name = "openTool";
             this.openTool.ShortcutKeyDisplayString = "Ctrl + O";
             this.openTool.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openTool.Size = new System.Drawing.Size(166, 22);
+            this.openTool.Size = new System.Drawing.Size(243, 22);
             this.openTool.Text = "Open as";
             this.openTool.ToolTipText = "Open file";
             this.openTool.Click += new System.EventHandler(this.openTool_Click);
+            // 
+            // saveWithFormatTool
+            // 
+            this.saveWithFormatTool.Name = "saveWithFormatTool";
+            this.saveWithFormatTool.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.S)));
+            this.saveWithFormatTool.Size = new System.Drawing.Size(243, 22);
+            this.saveWithFormatTool.Text = "Save with format";
+            this.saveWithFormatTool.ToolTipText = "Save text with format";
+            this.saveWithFormatTool.Click += new System.EventHandler(this.saveWithFormatTool_Click);
+            // 
+            // openWithFormatTool
+            // 
+            this.openWithFormatTool.Name = "openWithFormatTool";
+            this.openWithFormatTool.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.O)));
+            this.openWithFormatTool.Size = new System.Drawing.Size(243, 22);
+            this.openWithFormatTool.Text = "Open with format";
+            this.openWithFormatTool.ToolTipText = "Open text with format";
+            this.openWithFormatTool.Click += new System.EventHandler(this.openWithFormatTool_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -222,7 +244,7 @@ namespace Notepadik
             // 
             this.copyTool.Name = "copyTool";
             this.copyTool.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyTool.Size = new System.Drawing.Size(152, 22);
+            this.copyTool.Size = new System.Drawing.Size(144, 22);
             this.copyTool.Text = "Copy";
             this.copyTool.ToolTipText = "Copy selection";
             this.copyTool.Click += new System.EventHandler(this.copyTool_Click);
@@ -231,7 +253,7 @@ namespace Notepadik
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.ToolTipText = "Paste text into selection";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
@@ -240,7 +262,7 @@ namespace Notepadik
             // 
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.ToolTipText = "Cut selecion to the clipboard";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
@@ -265,23 +287,40 @@ namespace Notepadik
             this.infoTool.ToolTipText = "About program";
             this.infoTool.Click += new System.EventHandler(this.infoTool_Click);
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.DefaultExt = "ntp";
+            this.openFileDialog.Filter = "Notepadick files(*.ntp)|*.ntp|All files(*.*)|*.*";
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "ntp";
+            this.saveFileDialog.Filter = "Notepadick files(*.ntp)|*.ntp|All files(*.*)|*.*";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 311);
             this.Controls.Add(this.textBox);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "Main";
             this.Text = "NOTEPADICK";
             this.Load += new System.EventHandler(this.Main_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem openWithFormatTool;
+
+        private System.Windows.Forms.ToolStripMenuItem saveWithFormatTool;
+
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
 
         private System.Windows.Forms.ToolStripMenuItem bufferToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyTool;
@@ -317,7 +356,7 @@ namespace Notepadik
 
         private System.Windows.Forms.ToolStripMenuItem infoTool;
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem printTool;
 
         public System.Windows.Forms.RichTextBox textBox;

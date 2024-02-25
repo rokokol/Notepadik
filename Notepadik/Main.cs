@@ -142,5 +142,21 @@ namespace Notepadik
             Clipboard.SetText(textBox.SelectedText);
             textBox.SelectedText = "";
         }
+
+        private void saveWithFormatTool_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
+                return;
+            
+            textBox.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.RichText);
+        }
+
+        private void openWithFormatTool_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.Cancel)
+                return;
+            
+            textBox.LoadFile(openFileDialog.FileName, RichTextBoxStreamType.RichText);
+        }
     }
 }
