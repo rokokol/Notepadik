@@ -67,7 +67,7 @@ namespace Notepadik
             // 
             // textBox
             // 
-            this.textBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox.Location = new System.Drawing.Point(0, 27);
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(526, 284);
@@ -117,7 +117,7 @@ namespace Notepadik
             this.saveWithFormatTool.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.S)));
             this.saveWithFormatTool.Size = new System.Drawing.Size(243, 22);
             this.saveWithFormatTool.Text = "Save with format";
-            this.saveWithFormatTool.ToolTipText = "Save text with format";
+            this.saveWithFormatTool.ToolTipText = "Save text with formating";
             this.saveWithFormatTool.Click += new System.EventHandler(this.saveWithFormatTool_Click);
             // 
             // openWithFormatTool
@@ -126,7 +126,7 @@ namespace Notepadik
             this.openWithFormatTool.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.O)));
             this.openWithFormatTool.Size = new System.Drawing.Size(243, 22);
             this.openWithFormatTool.Text = "Open with format";
-            this.openWithFormatTool.ToolTipText = "Open text with format";
+            this.openWithFormatTool.ToolTipText = "Open text with formating";
             this.openWithFormatTool.Click += new System.EventHandler(this.openWithFormatTool_Click);
             // 
             // editToolStripMenuItem
