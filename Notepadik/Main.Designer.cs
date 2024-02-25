@@ -48,10 +48,12 @@ namespace Notepadik
             this.textSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.upTool = new System.Windows.Forms.ToolStripMenuItem();
             this.downTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFontDialogTool = new System.Windows.Forms.ToolStripMenuItem();
             this.changeColorTool = new System.Windows.Forms.ToolStripMenuItem();
             this.printTool = new System.Windows.Forms.ToolStripMenuItem();
             this.infoTool = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.fontDialog = new System.Windows.Forms.FontDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,7 +105,7 @@ namespace Notepadik
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.textFormatToolStripMenuItem, this.textSizeToolStripMenuItem, this.changeColorTool });
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.textFormatToolStripMenuItem, this.textSizeToolStripMenuItem, this.openFontDialogTool, this.changeColorTool });
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
@@ -112,7 +114,7 @@ namespace Notepadik
             // 
             this.textFormatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.boldTool, this.italicTool, this.strikeoutTool, this.regularTool, this.underlineTool });
             this.textFormatToolStripMenuItem.Name = "textFormatToolStripMenuItem";
-            this.textFormatToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.textFormatToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.textFormatToolStripMenuItem.Text = "Font  format";
             this.textFormatToolStripMenuItem.ToolTipText = "Change font formatof selection";
             // 
@@ -165,7 +167,7 @@ namespace Notepadik
             // 
             this.textSizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.upTool, this.downTool });
             this.textSizeToolStripMenuItem.Name = "textSizeToolStripMenuItem";
-            this.textSizeToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.textSizeToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.textSizeToolStripMenuItem.Text = "Text size";
             this.textSizeToolStripMenuItem.ToolTipText = "Resize selection";
             // 
@@ -187,10 +189,19 @@ namespace Notepadik
             this.downTool.ToolTipText = "Make smaller";
             this.downTool.Click += new System.EventHandler(this.downTool_Click);
             // 
+            // openFontDialogTool
+            // 
+            this.openFontDialogTool.Name = "openFontDialogTool";
+            this.openFontDialogTool.ShortcutKeys = ((System.Windows.Forms.Keys)((((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.F)));
+            this.openFontDialogTool.Size = new System.Drawing.Size(259, 22);
+            this.openFontDialogTool.Text = "Open font dialog";
+            this.openFontDialogTool.Click += new System.EventHandler(this.openFontDialogTool_Click);
+            // 
             // changeColorTool
             // 
             this.changeColorTool.Name = "changeColorTool";
-            this.changeColorTool.Size = new System.Drawing.Size(145, 22);
+            this.changeColorTool.ShortcutKeys = ((System.Windows.Forms.Keys)((((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.C)));
+            this.changeColorTool.Size = new System.Drawing.Size(259, 22);
             this.changeColorTool.Text = "Change color";
             this.changeColorTool.ToolTipText = "Change selected text color";
             this.changeColorTool.Click += new System.EventHandler(this.changeColorTool_Click_1);
@@ -232,6 +243,9 @@ namespace Notepadik
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.FontDialog fontDialog;
+        private System.Windows.Forms.ToolStripMenuItem openFontDialogTool;
 
         private System.Windows.Forms.ColorDialog colorDialog;
 

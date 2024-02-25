@@ -117,5 +117,14 @@ namespace Notepadik
                 return;
             textBox.SelectionColor = colorDialog.Color;
         }
+
+        private void openFontDialogTool_Click(object sender, EventArgs e)
+        {
+            fontDialog.ShowColor = true;
+            if (fontDialog.ShowDialog() == DialogResult.Cancel)
+                return;
+            textBox.SelectionFont = fontDialog.Font;
+            textBox.SelectionColor = fontDialog.Color;
+        }
     }
 }
