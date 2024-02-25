@@ -1,0 +1,12 @@
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\bin\Debug\Notepadik.exe.config
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\bin\Debug\Notepadik.exe
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\bin\Debug\Notepadik.pdb
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\obj\Debug\Notepadik.csproj.AssemblyReference.cache
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\obj\Debug\Notepadik.Properties.Resources.resources
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\obj\Debug\Notepadik.csproj.GenerateResource.cache
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\obj\Debug\Notepadik.csproj.CoreCompileInputs.cache
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\obj\Debug\Notepadik.exe
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\obj\Debug\Notepadik.pdb
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\obj\Debug\Notepadik.Main.resources
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\obj\Debug\Notepadik.SaveDialog.resources
+C:\Users\Rokoko\RiderProjects\Notepadik\Notepadik\obj\Debug\Notepadik.OpenDialog.resources
