@@ -50,6 +50,9 @@ namespace Notepadik
             this.textSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.upTool = new System.Windows.Forms.ToolStripMenuItem();
             this.downTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.textSizeTexbox = new System.Windows.Forms.ToolStripTextBox();
+            this.applyTool = new System.Windows.Forms.ToolStripMenuItem();
             this.openFontDialogTool = new System.Windows.Forms.ToolStripMenuItem();
             this.changeColorTool = new System.Windows.Forms.ToolStripMenuItem();
             this.bufferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -191,7 +194,7 @@ namespace Notepadik
             // 
             // textSizeToolStripMenuItem
             // 
-            this.textSizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.upTool, this.downTool });
+            this.textSizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.upTool, this.downTool, this.toolStripSeparator1, this.textSizeTexbox, this.applyTool });
             this.textSizeToolStripMenuItem.Name = "textSizeToolStripMenuItem";
             this.textSizeToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.textSizeToolStripMenuItem.Text = "Text size";
@@ -214,6 +217,25 @@ namespace Notepadik
             this.downTool.Text = "Down";
             this.downTool.ToolTipText = "Make smaller";
             this.downTool.Click += new System.EventHandler(this.downTool_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
+            // 
+            // textSizeTexbox
+            // 
+            this.textSizeTexbox.Name = "textSizeTexbox";
+            this.textSizeTexbox.Size = new System.Drawing.Size(100, 23);
+            this.textSizeTexbox.Click += new System.EventHandler(this.textSizeTexbox_Click);
+            // 
+            // applyTool
+            // 
+            this.applyTool.Name = "applyTool";
+            this.applyTool.Size = new System.Drawing.Size(170, 22);
+            this.applyTool.Text = "Apply";
+            this.applyTool.ToolTipText = "Apply the text size";
+            this.applyTool.Click += new System.EventHandler(this.applyTool_Click);
             // 
             // openFontDialogTool
             // 
@@ -244,7 +266,7 @@ namespace Notepadik
             // 
             this.copyTool.Name = "copyTool";
             this.copyTool.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyTool.Size = new System.Drawing.Size(144, 22);
+            this.copyTool.Size = new System.Drawing.Size(152, 22);
             this.copyTool.Text = "Copy";
             this.copyTool.ToolTipText = "Copy selection";
             this.copyTool.Click += new System.EventHandler(this.copyTool_Click);
@@ -253,7 +275,7 @@ namespace Notepadik
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.ToolTipText = "Paste text into selection";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
@@ -262,7 +284,7 @@ namespace Notepadik
             // 
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.ToolTipText = "Cut selecion to the clipboard";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
@@ -314,6 +336,11 @@ namespace Notepadik
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripTextBox textSizeTexbox;
+        private System.Windows.Forms.ToolStripMenuItem applyTool;
+
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 
         private System.Windows.Forms.ToolStripMenuItem openWithFormatTool;
 

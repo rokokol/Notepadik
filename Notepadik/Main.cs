@@ -158,5 +158,23 @@ namespace Notepadik
             
             textBox.LoadFile(openFileDialog.FileName, RichTextBoxStreamType.RichText);
         }
+
+        private void applyTool_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(textSizeTexbox.Text, out int size) && size > 0 && size < 50)
+            {
+                textBox.SelectionFont = new Font(textBox.SelectedText, size);
+                textSizeTexbox.ForeColor = Color.Black;
+            }
+            else
+            {
+                textSizeTexbox.ForeColor = Color.DarkRed;
+            }
+        }
+
+        private void textSizeTexbox_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
